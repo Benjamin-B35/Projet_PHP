@@ -2,6 +2,16 @@
 require_once 'model/Model.php';
 
 class Order extends Model {
+
+    public function getOrderById($order_id) {
+        $sql = 'SELECT o.order_id, o.order_date, o.order_status, o.first_name, o.last_name, o.order_address, o.order_city, o.order_country, p.product_name, i.quantity, p.product_price, p.product_image 
+        FROM orders o INNER JOIN order_items i ON i.order_id = o.order_id INNER JOIN products p ON i.product_id = p.product_id 
+        WHERE o.order_id = ?';
+        $order = $this->executeRequest($sql, [$order_id]);
+        $order = $order->fetch();
+        return $order;
+    }
+
     public function getOrdersByUser($user_id) {
         $sql = 'SELECT o.order_id, o.order_date, o.order_price, o.order_status, o.first_name, o.last_name, o.order_address, o.order_city, o.order_country
         FROM orders AS o INNER JOIN users u ON o.user_id = u.user_id 

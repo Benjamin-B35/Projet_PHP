@@ -2,12 +2,12 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-$this->title = "Validation commande - Algobreizh";
+$this->title = "Envoi commande - Algobreizh";
 ?>
 
 <div class="container">
   <main>
-    <div class="py-5 text-center">
+    <div class="pb-5 text-center">
       <img class="d-block mx-auto mb-4" src="assets/img/logo-nav.svg" alt="" width="" height="80">
       <h2>Validation de votre commande</h2>
     </div>
@@ -82,7 +82,7 @@ $this->title = "Validation commande - Algobreizh";
             </div>
 
             <div class="col-sm-6">
-              <label for="city" class="form-label">Nom</label>
+              <label for="city" class="form-label">Ville</label>
               <input type="text" class="form-control" id="city" name="city" placeholder="Paris" value="" required>
               <div class="invalid-feedback">
                 Entrez votre nom
@@ -138,7 +138,7 @@ $this->title = "Validation commande - Algobreizh";
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit" name="validate">Valider la commande</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit" name="validate">Envoyer commande</button>
         </form>
       </div>
     </div>

@@ -71,9 +71,9 @@ class User extends Model {
         $this->executeRequest($sql, array($id));
     }
 
-    public function createUser($code, $username, $firstName, $lastName, $city, $password, $email, $token) {
-        $sql = 'INSERT INTO users (code, username, email, password, contact_first_name, contact_last_name, city_id, confirmation_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-        $this->executeRequest($sql, [$code, $username, $email, $password, $firstName, $lastName, $city, $token]);
+    public function createUser($username, $firstName, $lastName, $city, $password, $email, $token) {
+        $sql = 'INSERT INTO users (username, email, password, contact_first_name, contact_last_name, city_id, confirmation_token) VALUES (?, ?, ?, ?, ?, ?, ?)';
+        $this->executeRequest($sql, [$username, $email, $password, $firstName, $lastName, $city, $token]);
     }
 
     public function lastInsertId() {

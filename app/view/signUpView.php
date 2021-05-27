@@ -17,9 +17,9 @@
             <img class="mb-4" src="../assets/img/logo-nav.svg" alt="" width="" height="110">
             <h1 class="h3 mb-3 fw-normal">Inscription</h1>
             <label for="inputUsername" class="visually-hidden">Nom de la société</label>
-                <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Nom d'utilisateur">
-            <label for="inputEmail" class="visually-hidden">Adresse email</label>
-                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Adresse email">
+                <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Nom de la société">
+            <label for="inputEmail" class="visually-hidden">Adresse e-mail</label>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail">
             <label for="inputFirstName" class="visually-hidden">Prénom du conatact</label>
                 <input type="text" name="first_name" id="inputFirstName" class="form-control" placeholder="Prénom du contact">
             <label for="inputLastName" class="visually-hidden">Nom du contact</label>

@@ -29,7 +29,7 @@ class LoginController {
                 $_SESSION['role'] = $role; 
                 $_SESSION['loggedIn'] = true;
             if($_SESSION['role'] == 'customer') {                        
-                $this->shopCtrl->shop();
+                $this->shopCtrl->shop(0);
             } else {
                 $this->adminHomeCtrl->adminHome();
             }

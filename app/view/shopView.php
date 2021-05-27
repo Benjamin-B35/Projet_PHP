@@ -12,7 +12,7 @@
       <div class="list-group">
         <a href="index.php?action=shop" class="list-group-item text-dark">Tous</a>
           <?php foreach($categories as $category) : ?>
-            <a href="index.php?action=shop&categoryId=<?= $category['category_id'] ?>" class="list-group-item text-dark"><?= $category['category_name'] ?></a>
+            <a href="index.php?action=shop&category=<?= $category['category_id'] ?>" class="list-group-item text-dark"><?= $category['category_name'] ?></a>
           <?php endforeach; ?>
       </div>
     </div>

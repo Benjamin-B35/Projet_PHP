@@ -24,11 +24,10 @@ class SignUpController {
         if($checkUser == true AND $checkEmail == true AND $checkPassword == true) {
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $token = $this->generateToken(60);
-            $code = $this->generateUserCode();
             $city = (int)$this->city->getCityIdByName($city);
-            $this->user->createUser($code, $username, $firstName, $lastName, $city, $password, $email, $token);
+            $this->user->createUser($username, $firstName, $lastName, $city, $password, $email, $token);
             $user = $this->user->lastInsertId();
-            $this->sendEmail($email, 'Confirmation de votre compte', "Afin de valider votre compte, merci de cliquer sur ce lien\n\nhttp://localhost/new_Algobreizh/app/index.php?action=confirm&id=$user&token=$token\n\nVotre code client : $code");
+            $this->sendEmail($email, 'Confirmation de votre compte', "Afin de valider votre compte, merci de cliquer sur ce lien\n\nhttps://algobreizh.benjamin-brault-renault/app/index.php?action=confirm&id=$user&token=$token");
             $_SESSION['flash']['success'] = "Un email de confirmation vous a été envoyé pour valider votre compte";
             $this->loginCtrl->login();
         } else {
@@ -77,11 +76,6 @@ class SignUpController {
             echo 'mot de passe invalide';
         }
         return true;
-    }
-
-    public function generateUsercode() {
-        $code = "0123456789";
-        return substr(str_shuffle(str_repeat($code, 5)), 0, 5);
     }
 
     public function generateToken($length){

@@ -54,7 +54,7 @@ class CartController {
         } else {
             $_SESSION['cart'][$product_id] = 1;
         }
-        $this->shopCtrl->shop();     
+        $this->shopCtrl->shop(0);  
     }
 
     public function del($product_id) {

@@ -53,7 +53,7 @@ $this->title = "Panier - Algobreizh";
                                     </div>
                                     <div class="col-4 col-sm-4 col-md-4">
                                         <div class="quantity">
-                                            <input type="number" step="1" max="20" min="1" value="<?= $_SESSION['cart'][$item['product_id']]; ?>" title="Qty" class="qty"
+                                            <input type="number" step="1" max="20" min="1"  value="<?= $_SESSION['cart'][$item['product_id']]; ?>" title="Qty" class="qty"
                                                 size="4">
                                         </div>
                                     </div>
@@ -78,16 +78,6 @@ $this->title = "Panier - Algobreizh";
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
-                            <div class="row">
-                                <div class="col-6">
-                                    <input type="text" class="form-control" placeholder="Code coupon">
-                                </div>
-                                <div class="col-6">
-                                    <input type="submit" class="btn btn-default" value="Utiliser un coupon">
-                                </div>
-                            </div>
-                        </div>
                         <div class="pull-right" style="margin: 10px">
                             <a href="index.php?action=checkout" class="btn btn-success pull-right">Payer</a>
                             <div class="pull-right" style="margin: 5px">

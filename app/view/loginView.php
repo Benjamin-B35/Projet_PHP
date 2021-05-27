@@ -17,8 +17,8 @@ if(!empty($errors)) : ?>
         <form method="POST" action="index.php?action=valid-login">
             <img class="mb-4" src="../assets/img/logo-nav.svg" alt="" width="" height="110">
             <h1 class="h3 mb-3 fw-normal">Connexion</h1>
-            <label for="inputEmail" class="visually-hidden">Email</label>
-                <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email">
+            <label for="inputEmail" class="visually-hidden">Adresse e-mail</label>
+                <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail">
             <label for="inputPassword" class="visually-hidden">Mot de passe</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe">
             <button class="w-100 btn btn-lg btn-success" type="submit" name="login">Se connecter</button>

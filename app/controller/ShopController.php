@@ -13,9 +13,13 @@ class ShopController {
         $this->category = new Category();
     }
 
-    public function shop() {
-        $categories = $this->category->getCategories();
+    public function shop($category) {
+        if ($category == 0) {
             $products = $this->product->getProducts();
+        } else {
+            $products = $this->product->getProductsByIdCategory($category);
+        }
+        $categories = $this->category->getCategories();       
         $view = new View("shop");
         $view->generate(array('categories' => $categories, 'products' => $products));
     }

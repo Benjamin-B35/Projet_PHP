@@ -42,8 +42,8 @@ abstract class Model {
     private function getDb() {
         if ($this->db == null) {
             // Création de la connexion
-            $this->db = new PDO('mysql:host=localhost;dbname=algo;charset=utf8',
-                    'root', '',
+            $this->db = new PDO('mysql:host=algobreizh.benjamin-brault-renault.fr;dbname=iwli0272_algobreizh;charset=utf8',
+                    'iwli0272_admin', '@dmin355',
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return $this->db;

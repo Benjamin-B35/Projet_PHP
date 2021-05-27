@@ -61,7 +61,12 @@ class Router {
                         $this->signUpCtrl->checkToken($id, $token);
                         break;
                     case 'shop' :
-                        $this->shopCtrl->shop();
+                        if(isset($_GET['category'])) {
+                            $category = $this->getParam($_GET, 'category');
+                            $this->shopCtrl->shop($category);
+                        } else {
+                            $this->shopCtrl->shop(0);
+                        }
                         break;
                     case 'admin-home' :
                         $this->adminHomeCtrl->adminHome();
@@ -102,13 +107,13 @@ class Router {
                         $city = $this->getParam($_POST, 'city');
                         $this->checkoutCtrl->checkForm($user_id, $first_name, $last_name, $address, $country, $city);
                     default :
-                        $this->shopCtrl->shop();
+                        $this->shopCtrl->shop(0);
                 }
             }
             else {  // aucune action définie : affichage de la boutique ou de la page d'inscription
                 if (isset($_SESSION['role'])) {
                     if($_SESSION['role'] == 'customer') {
-                        $this->shopCtrl->shop();
+                        $this->shopCtrl->shop(0);
                     } else {
                         $this->adminHomeCtrl->adminHome();
                     }

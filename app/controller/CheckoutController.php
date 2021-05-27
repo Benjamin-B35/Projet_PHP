@@ -48,7 +48,7 @@ class CheckoutController {
             }
             unset($_SESSION['cart']);
             $_SESSION['flash']['success'] = "Votre commande à été envoyé, elle sera traitée sous 48h";
-            $this->shopCtrl->shop();
+            $this->shopCtrl->shop(0);
         
         } else {
             $_SESSION['flash']['danger'] = "Veuillez compléter tous les champs";
